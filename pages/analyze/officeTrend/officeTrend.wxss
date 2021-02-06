@@ -1,0 +1,7 @@
+/* pages/analyze/officeTrend/officeTrend.wxss */
+ec-canvas {
+     width: 100%;
+     height: 100%;
+    
+   }
+   

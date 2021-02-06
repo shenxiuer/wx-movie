@@ -1,0 +1,91 @@
+<!--pages/predicted/predicted.wxml-->
+ 
+  
+ 
+ 
+
+<radio-group bindchange="radioChange">
+     <radio class="head" value="1"  bind:tap="onClick"          >按预测票房排序</radio>  <radio class="head" value="2"   bind:tap="onClick"     >按时间排序</radio>  
+     <radio class="head" value="3">按热度 <span style="font-size:20rpx;color:red;">(未开发)</span></radio>
+   </radio-group>
+
+ 
+     <!-- 分割线 -->
+  <view class="divLine"></view>
+ 
+   <van-row style="margin:5rpx">
+     <van-col span="8"  class="movie"  > <span style="border:1rpx solid red;padding:30rpx;border-radius: 50rpx  ">电影序列</span>
+     </van-col>
+     <van-col span="8"  class="movie"  > <span style="border:1rpx solid red;padding:30rpx;border-radius: 50rpx  ">真实票房</span>
+     </van-col>
+     <van-col span="8" class="boxoffice"><span style="border:1rpx solid rebeccapurple;padding:30rpx;border-radius: 50rpx  ">预测票房</span>
+     </van-col>
+    </van-row>
+    <view   >
+     <view style="margin-bottom:30rpx;" class="card" wx:for="{{list}}" wx:key="id"> 
+      <van-row> 
+  <van-col span="8">
+    
+
+          <image style="width:150rpx;height:180rpx; margin-left:50rpx;" src="https://img2020.cnblogs.com/blog/1648896/202101/1648896-20210111190624889-1300685743.png" mode="scaleToFill">111</image>
+         <span style="text-align:center;display:block;">  {{item.title}}</span>
+         <span style="text-align:center;display:block;color:red;">  {{item.state}}</span>
+
+
+    <!-- <van-card  num-class="display:none"
+   
+   currency=""
+   tag="{{item.releaseTime}}"
+   price="{{item.title}}"
+   desc="{{item.type}}"
+   title="{{item.actors[0].name}} {{item.actors[1].name}} {{item.actors[2].name}}"
+   thumb="https://img2020.cnblogs.com/blog/1648896/202101/1648896-20210111190624889-1300685743.png"
+   /> -->
+   
+   </van-col>
+  <van-col span="8">  
+    <van-circle  value="{{ item.expectedBoxoffice/max*100 }}"  layer-color="#eeeeee"
+  color="#ee0a24"  text="{{item.expectedBoxoffice}} 万"  ></van-circle>
+
+</van-col>
+<van-col span="8">  
+    <van-circle  value="{{ item.boxoffice/maxReal*100 }}"  layer-color="#eeeeee"
+  color="#87CEEB"  text="{{item.boxoffice}} 万"  ></van-circle>
+
+</van-col>
+<!-- <span>准确率 : {{1-(item.boxoffice-item.expectedBoxoffice)/item.boxoffice}}  </span> -->
+<span style="text-align:center;display:block;color:red;">准确率 : {{ item.key}}%  </span>
+</van-row>
+</view>
+ 
+    
+
+  
+</view>
+
+ 
+ 
+ 
+
+
+
+<view>
+  <van-divider />
+</view>
+<view wx:if="{{flag}}" style="margin:15rpx">
+  <van-row>
+    
+  <van-col offset="2" span="24">
+    <van-button   plain type="info" size="mini" custom-style="width:150rpx;margin-right:65rpx;">
+        第{{page}}页</van-button>
+    <van-button  data-cid='-1'  bind:click="onClick" plain type="info" size="mini" custom-style="width:150rpx;margin-right:65rpx;">上一页</van-button>
+  <van-button plain data-cid='1'  bind:click="onClick" type="info" size="mini" custom-style="width:150rpx">下一页</van-button>
+</van-col>
+</van-row>
+ 
+</view>
+  
+   
+
+
+ 

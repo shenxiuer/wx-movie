@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view  >年份（滑动）
+  <van-slider value="2000" min="1970" max="2020" bind:change="onChange"  bind:tap="show" />
+ 
+</view>
+<view class="container" >
+  <ec-canvas style="z-index:1;!important" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+ 

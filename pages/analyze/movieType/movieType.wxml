@@ -1,0 +1,12 @@
+ 
+<view class="container chart-one" bind:click="onClickShow"   >  
+ <ec-canvas class=" Type" style="z-index:0;" id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}">1</ec-canvas>
+</view>
+ 
+ 
+
+
+<!-- <l-button type="default">默认按钮</l-button>
+
+<l-input label="用户名"  placeholder="请输入用户名"  />
+<l-input label="密码"  placeholder="请输入密码"  /> -->

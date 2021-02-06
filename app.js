@@ -39,10 +39,19 @@ App({
     openid:'',
     roomId:'',
     userInfo:'',
-    // backUrl:'http://[2408:8207:2594:c220:7194:2154:4674:c748]:8080/',
-    // backUrl:'http://127.0.0.1:8080/',
-    backUrl:'http://192.168.43.90:8080/',
-    
+   parameter:null,
+   movieType:null,
+    // backUrl:'http://127.0.0.1:8086/search/movies?',
+    backUrl:'https://www.greatideas.cn:10020/search/',
+    // backUrl:'http://localhost:8008/search/',
+    // backUrl:'http://81.70.149.182:8086/search/',
+    // backUrl:'http://39.107.61.165:10020/search/?'
+    commonUrl:'https://www.greatideas.cn:10020/',
+    // commonUrl:'http://localhost:8008',
+    // 2021年1月11日
+    predictUrl:'https://www.greatideas.cn:10020/moviePredictionPage',
+    // predictUrl:'http://localhost:8008/moviePredictionPage'
+
     
     // backUrl:'http://10.0.1.6:8080/',
     // backUrl:'https://back.jyzero.club/',

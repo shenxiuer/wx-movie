@@ -1,0 +1,15 @@
+<!--pages/analyze/Filmmakers/Filmmakers.wxml-->
+
+<radio-group bindchange="radioChange">
+     <radio class="head" value="1"  bind:tap="show"  checked="true" >演员</radio> 
+      <radio class="head" value="2"   bind:tap="show" >导演</radio>  
+     <radio class="head" value="3" bind:tap="show" >编剧   </radio>
+     <view>    <radio class="head" value="4" bind:tap="show" >女演员   </radio>
+     <radio class="head" value="5" bind:tap="show" >男演员   </radio></view>
+ 
+   </radio-group> 
+     <view class="container"  > 
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+ 
+<view  class="tail">票房(亿)</view>

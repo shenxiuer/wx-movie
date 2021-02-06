@@ -1,0 +1,25 @@
+/* pages/predict/predict.wxss */
+
+.head{
+     font-size: smaller;
+     margin: 10rpx;
+     color: hsl(30, 100%, 50%);
+}
+
+.boxoffice{
+     color: red;
+     font-variant: small-caps;
+}
+
+.movie{
+     text-align:center;
+     color: rebeccapurple;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.divLine{
+     background: #E0E3DA;
+     width: 100%;
+     height: 5rpx;
+    }
