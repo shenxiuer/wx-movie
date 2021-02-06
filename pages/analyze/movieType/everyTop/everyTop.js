@@ -274,7 +274,7 @@ Page({
      
     wx.request({
       
-      url: "http://127.0.0.1:8008/movie/boxTopType?type=" +that.data.movieType,
+      url: app.globalData.commonUrl+"/movie/boxTopType?type=" +that.data.movieType,
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值

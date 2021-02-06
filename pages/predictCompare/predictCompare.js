@@ -139,7 +139,7 @@ Page({
  
     wx.request({
      
-      url: app.globalData.predictUrl+that.data.string+that.data.page+'&&pageSize=10',
+      url: app.globalData.predictUrl+'?accuracy=false&page='+that.data.page,
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
@@ -154,14 +154,14 @@ Page({
       
           for(var i in lis)
           {
-              lis[i]['key'] = ( Math.min(lis[i].expectedBoxoffice,lis[i].boxoffice)/Math.max(lis[i].expectedBoxoffice,lis[i].boxoffice)*100).toFixed(2)
-             
-            
-             
+              // lis[i]['key'] = ( Math.min(lis[i].expectedBoxoffice,lis[i].boxoffice)/Math.max(lis[i].expectedBoxoffice,lis[i].boxoffice)*100).toFixed(2)
+              lis[i].accuracy=  100*lis[i].accuracy 
+              lis[i].accuracy=  lis[i].accuracy.toFixed(2)
+  
           }
-          lis.sort(function(a,b){
-            return b.key -a.key
-          })
+          // lis.sort(function(a,b){
+          //   return b.key -a.key
+          // })
           that.setData({
             list:lis,
             page:that.data.page,

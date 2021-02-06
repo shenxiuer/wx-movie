@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/analyze/analyze",
+    "pages/predictCompare/predictCompare",
     "pages/predict/predict",
     "pages/analyze/movieTop10/movieTop10",  
+    "pages/analyze/movieScoreTop10/movieScoreTop10",  
     "pages/analyze/movieType/movieType",
     "pages/analyze/movieType/everyTop/everyTop",
-    "pages/predictCompare/predictCompare",
     "pages/analyze/Filmmakers/Filmmakers", 
     "pages/analyze/officeTrend/officeTrend",
     "pages/predicted/predicted",

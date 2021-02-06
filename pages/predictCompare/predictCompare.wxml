@@ -3,11 +3,11 @@
   
  
  
-
+<!-- 
 <radio-group bindchange="radioChange">
      <radio class="head" value="1"  bind:tap="onClick"          >按预测票房排序</radio>  <radio class="head" value="2"   bind:tap="onClick"     >按时间排序</radio>  
      <radio class="head" value="3">按热度 <span style="font-size:20rpx;color:red;">(未开发)</span></radio>
-   </radio-group>
+   </radio-group> -->
 
  
      <!-- 分割线 -->
@@ -54,7 +54,7 @@
 
 </van-col>
 <!-- <span>准确率 : {{1-(item.boxoffice-item.expectedBoxoffice)/item.boxoffice}}  </span> -->
-<span style="text-align:center;display:block;color:red;">准确率 : {{ item.key}}%  </span>
+<span style="text-align:center;display:block;color:red;">准确率 : {{ item.accuracy}}%  </span>
 </van-row>
 </view>
  

@@ -7,8 +7,11 @@ Page({
      data: {
           charts: [{
                id: 'movieTop10',
-               name: '电影年度TOP10'
-             },  {
+               name: '电影年度票房TOP10'
+             }, {
+              id: 'movieScoreTop10',
+              name: '电影年度评分TOP10'
+            }, {
                id: 'movieType',
                name: '电影类型占比' 
              }, {

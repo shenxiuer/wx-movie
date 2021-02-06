@@ -15,7 +15,7 @@ function initChart(canvas, width, height, dpr) {
   
   var option = {
     title: {
-      text: '电影年度票房排行(top10)',
+      text: '电影年度评分排行(top10)',
       left: 'left',
       color:'#37a2da'
     },
@@ -28,7 +28,7 @@ function initChart(canvas, width, height, dpr) {
       confine: true
     },
     legend: {
-      data: ['热度', '票房（万）', ''],
+      data: ['热度', '评分', ''],
       right:'right'
     },
     grid: {
@@ -84,7 +84,7 @@ function initChart(canvas, width, height, dpr) {
         }
       },
       {
-        name: '票房（万）',
+        name: '评分',
         type: 'bar',
         stack: '总量',
         label: {
@@ -125,7 +125,7 @@ var that = this
    
     option.series[1].data=score
  
-    option.title.text =  '电影'+year+'年票房排行(top10)'
+    option.title.text =  '电影'+year+'年评分排行(top10)'
     option.yAxis[0].data=title
     
     // console.log(option.series[0].data)
@@ -269,7 +269,7 @@ Page({
      year = this.data.boxTopYear
     wx.request({
       
-      url: app.globalData.commonUrl + '/movie/boxTopYear?year='+that.data.boxTopYear,
+      url: app.globalData.commonUrl + '/movie/boxScoreYear?year='+that.data.boxTopYear,
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
@@ -283,7 +283,7 @@ Page({
          
    
         for (var i in array) {
-          that.data.score.unshift(array[i].boxoffice)
+          that.data.score.unshift(array[i].score)
           that.data.title.unshift(array[i].title)
           
         }
