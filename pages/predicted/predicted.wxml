@@ -16,6 +16,7 @@
   
 
 </view>
+
 </van-search>
     
     <view class="card" wx:for="{{list}}" wx:key="id">
@@ -27,9 +28,14 @@
   title="{{item.actors[0].name}} {{item.actors[1].name}} {{item.actors[2].name}}"
   thumb="{{item.movie.imageName}}"
   
- />  
-
-  
+ >  
+ <view slot="price-top" >
+  <navigator  url="./detailedInformation/detail?movieId={{item.movie.id}}" hover-class="navigator-hover">
+    <van-button custom-style="width:10rpx;" plain type="primary" size="mini">详细信息</van-button></navigator>
+   
+   
+ </view>
+  </van-card>
 </view>
 
 </van-tab>
@@ -43,6 +49,7 @@
   shape="round"
   background="#4fc08d"
 >
+
 <view slot="action"  data-cid="0" bind:tap="onClick">搜索</view>
 </van-search>
     
@@ -50,19 +57,17 @@
   <van-card
   num=""
   currency=""
-  tag="{{item.director.location}}"
+  tag=""
   price="{{item.director.name}}"
   desc="{{item.director.occupation}} "
   title="代表作：{{item.amovies[0].title}} {{item.amovies[1].title}} {{item.amovies[2].title}} {{item.amovies[3].title}} {{item.amovies[4].title}}"
   thumb="{{item.director.imageName}} "
   >
 
- <view slot="price-top" style="">
-  <van-button size="mini" custom-style="margin-right:120rpx;width:150rpx;">查看详细信息</van-button>
+  <view slot="price-top" >
+  <navigator  url="./detailedInformation/detailPerson/detailPerson?directorId={{item.director.id}}" hover-class="navigator-hover">
+    <van-button custom-style="width:10rpx;" plain type="primary" size="mini">详细信息</van-button></navigator>
    
- </view>
- <view slot="tag" style="backgroundcolor:green;">
-    
    
  </view>
 </van-card>

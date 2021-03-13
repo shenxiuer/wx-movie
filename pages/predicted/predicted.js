@@ -119,6 +119,7 @@ Page({
         if(that.data.name=="movies"){
         var lis = res.data.movies;
         console.log(res)
+          // app.globalData.movieId = 
         for(var i in lis)
         {
             lis[i].movie.imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].movie.imageName;
@@ -136,7 +137,7 @@ Page({
           var lis = res.data.directors;
           for(var i in lis)
           {
-              lis[i].director.imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].director.imageName;
+              lis[i].director.imageName="http://106.54.68.249:10025/person_picture/"+lis[i].director.imageName;
           }
           console.log(res)
           that.setData({
@@ -154,7 +155,7 @@ Page({
           console.log(res)
           for(var i in lis)
           {
-              lis[i].actor.imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].actor.imageName;
+              lis[i].actor.imageName="http://106.54.68.249:10025/person_picture/"+lis[i].actor.imageName;
           }
           that.setData({
             list:lis,
@@ -171,7 +172,7 @@ Page({
           console.log(res)
           for(var i in lis)
           {
-              lis[i].scenarist.imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].scenarist.imageName;
+              lis[i].scenarist.imageName="http://106.54.68.249:10025/person_picture/"+lis[i].scenarist.imageName;
           }
           that.setData({
             list:lis,

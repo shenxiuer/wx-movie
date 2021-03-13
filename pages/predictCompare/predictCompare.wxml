@@ -14,11 +14,11 @@
   <view class="divLine"></view>
  
    <van-row style="margin:5rpx">
-     <van-col span="8"  class="movie"  > <span style="border:1rpx solid red;padding:30rpx;border-radius: 50rpx  ">电影序列</span>
+     <van-col span="8"  class="movie"  > <span style=" padding:30rpx;border-radius: 50rpx  ">电影序列</span>
      </van-col>
-     <van-col span="8"  class="movie"  > <span style="border:1rpx solid red;padding:30rpx;border-radius: 50rpx  ">真实票房</span>
+     <van-col span="8"  class="movie"  > <span style=" padding:30rpx;border-radius: 50rpx  ">真实票房</span>
      </van-col>
-     <van-col span="8" class="boxoffice"><span style="border:1rpx solid rebeccapurple;padding:30rpx;border-radius: 50rpx  ">预测票房</span>
+     <van-col span="8" class="boxoffice"><span style=" padding:30rpx;border-radius: 50rpx  ">预测票房</span>
      </van-col>
     </van-row>
     <view   >
@@ -44,14 +44,14 @@
    
    </van-col>
   <van-col span="8">  
-    <van-circle  value="{{ item.expectedBoxoffice/max*100 }}"  layer-color="#eeeeee"
-  color="#ee0a24"  text="{{item.expectedBoxoffice}} 万"  ></van-circle>
-
-</van-col>
-<van-col span="8">  
     <van-circle  value="{{ item.boxoffice/maxReal*100 }}"  layer-color="#eeeeee"
   color="#87CEEB"  text="{{item.boxoffice}} 万"  ></van-circle>
 
+</van-col>
+<van-col span="8">  
+   
+  <van-circle  value="{{ item.expectedBoxoffice/max*100 }}"  layer-color="#eeeeee"
+  color="#ee0a24"  text="{{item.expectedBoxoffice}} 万"  ></van-circle>
 </van-col>
 <!-- <span>准确率 : {{1-(item.boxoffice-item.expectedBoxoffice)/item.boxoffice}}  </span> -->
 <span style="text-align:center;display:block;color:red;">准确率 : {{ item.accuracy}}%  </span>

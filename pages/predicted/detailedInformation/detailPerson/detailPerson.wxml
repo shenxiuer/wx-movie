@@ -1,0 +1,58 @@
+<!--pages/predicted/detailedInformation/detail.wxml-->
+
+
+
+<van-row>
+  <van-col span="8">
+  <view>
+     <image style="width:180rpx;height:250rpx;margin:50rpx 50rpx 20rpx 50rpx" src="{{list.imageName}}" width="60rpx" height="80rpx"></image>
+
+
+  </view>
+    
+
+
+  </van-col>
+ 
+  <van-col span="16">
+  <view style="margin:30rpx" >
+  <view style="margin-top:20rpx;">姓名：{{list.title}}
+     <span style="color:rgb(220,223,230);">|</span>  性别：{{list.gender}}
+  </view>
+
+
+<view  style="margin-top:20rpx;">职业：{{list.occupation}}  </view>
+<view  style="margin-top:20rpx;"   >  出生日期：{{list.birthday}}
+     <span style="color:rgb(220,223,230);">|</span>
+     出生地：{{list.location}}
+</view>
+<view  style="margin-top:20rpx;"   >  戏龄：{{list.releaseArea}}
+     <span style="color:rgb(220,223,230);">|</span>
+     表演风格：{{}}
+</view>
+
+
+
+
+</view>
+  </van-col>
+</van-row>
+<van-row>
+<van-col>
+<view style="margin-left:50rpx">
+     <view style="margin-top:20rpx;">
+          参演作品：<van-switch  size="24px"  checked="{{ checked }}" bind:change="onChange" ></van-switch> 
+          展开
+          <span style="display:inline-block;margin-right:20rpx;" wx:for="{{director}}" wx:key="id">{{item.name}}</span>
+     </view>
+ >
+
+
+
+
+
+
+</view>
+</van-col>
+</van-row>
+ 

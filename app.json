@@ -1,65 +1,65 @@
 {
-  "pages": [
-    "pages/analyze/analyze",
-    "pages/predictCompare/predictCompare",
-    "pages/predict/predict",
-    "pages/analyze/movieTop10/movieTop10",  
-    "pages/analyze/movieScoreTop10/movieScoreTop10",  
-    "pages/analyze/movieType/movieType",
-    "pages/analyze/movieType/everyTop/everyTop",
-    "pages/analyze/Filmmakers/Filmmakers", 
-    "pages/analyze/officeTrend/officeTrend",
-    "pages/predicted/predicted",
- 
-    "pages/homepage/homepage", 
-    "pages/my/my",
- 
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/predict/predict",
-        "text": "影视预测",
-        "iconPath": "/pages/images/创作(1).png",
-        "selectedIconPath": "/pages/images/创作.png"
-      },
-      {
-        "pagePath": "pages/predicted/predicted",
-        "text": "影视搜索",
-        "iconPath": "/pages/images/搜索.png",
-        "selectedIconPath": "/pages/images/搜索(1).png"
-      },
-      {
-        "pagePath": "pages/analyze/analyze",
-        "text": "影视分析",
-        "iconPath": "/pages/images/搜索.png",
-        "selectedIconPath": "/pages/images/搜索(1).png"
-      },
-      {
-        "pagePath": "pages/predictCompare/predictCompare",
-        "text": "预测比较",
-        "iconPath": "/pages/images/搜索.png",
-        "selectedIconPath": "/pages/images/搜索(1).png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "我的",
-        "iconPath": "/pages/images/my.png",
-        "selectedIconPath": "/pages/images/my(1).png"
-      }
-    ]
-  },
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
-  },
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+     "pages": [
+          "pages/predicted/predicted",
+          "pages/predicted/detailedInformation/detailPerson/detailPerson",
+          "pages/predict/predict",
+          "pages/predicted/detailedInformation/detail",
+          "pages/analyze/analyze",
+          "pages/predictCompare/predictCompare",
+          "pages/analyze/movieTop10/movieTop10",
+          "pages/analyze/movieScoreTop10/movieScoreTop10",
+          "pages/analyze/movieType/movieType",
+          "pages/analyze/movieType/everyTop/everyTop",
+          "pages/analyze/Filmmakers/Filmmakers",
+          "pages/analyze/officeTrend/officeTrend",
+          "pages/homepage/homepage",
+          "pages/my/my",
+          "pages/index/index",
+          "pages/logs/logs"
+     ],
+     "tabBar": {
+          "list": [
+               {
+                    "pagePath": "pages/predict/predict",
+                    "text": "影视预测",
+                    "iconPath": "/pages/images/创作(1).png",
+                    "selectedIconPath": "/pages/images/创作.png"
+               },
+               {
+                    "pagePath": "pages/predicted/predicted",
+                    "text": "影视搜索",
+                    "iconPath": "/pages/images/搜索.png",
+                    "selectedIconPath": "/pages/images/搜索(1).png"
+               },
+               {
+                    "pagePath": "pages/analyze/analyze",
+                    "text": "影视分析",
+                    "iconPath": "/pages/images/搜索.png",
+                    "selectedIconPath": "/pages/images/搜索(1).png"
+               },
+               {
+                    "pagePath": "pages/predictCompare/predictCompare",
+                    "text": "预测比较",
+                    "iconPath": "/pages/images/搜索.png",
+                    "selectedIconPath": "/pages/images/搜索(1).png"
+               },
+               {
+                    "pagePath": "pages/index/index",
+                    "text": "我的",
+                    "iconPath": "/pages/images/my.png",
+                    "selectedIconPath": "/pages/images/my(1).png"
+               }
+          ]
+     },
+     "usingComponents": {
+          "van-button": "@vant/weapp/button/index"
+     },
+     "window": {
+          "backgroundTextStyle": "light",
+          "navigationBarBackgroundColor": "#fff",
+          "navigationBarTitleText": "Weixin",
+          "navigationBarTextStyle": "black"
+     },
+     "style": "v2",
+     "sitemapLocation": "sitemap.json"
 }

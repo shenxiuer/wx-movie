@@ -40,6 +40,7 @@ App({
     roomId:'',
     userInfo:'',
    parameter:null,
+   movieId:null,
    movieType:null,
     // backUrl:'http://127.0.0.1:8086/search/movies?',
     backUrl:'https://www.greatideas.cn:10020/search/',

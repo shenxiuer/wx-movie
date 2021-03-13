@@ -138,7 +138,7 @@ function initChart(canvas, width, height, dpr) {
 
   var option = {
     title: {
-      text: '电影类型占比(top20)',
+      text: '电影类型占比',
       left: 'left'
     },
     backgroundColor: "#fff",

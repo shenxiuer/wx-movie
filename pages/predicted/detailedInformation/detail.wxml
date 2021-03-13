@@ -1,0 +1,52 @@
+<!--pages/predicted/detailedInformation/detail.wxml-->
+
+
+
+<van-row>
+  <van-col span="8">
+  <view>
+     <image style="width:180rpx;height:250rpx;margin:50rpx 50rpx 20rpx 50rpx" src="{{list.imageName}}" width="60rpx" height="80rpx"></image>
+
+
+  </view>
+    
+
+
+  </van-col>
+ 
+  <van-col span="16">
+  <view style="margin:30rpx" >
+  <view style="margin-top:20rpx;">电影名：{{list.title}}</view>
+
+
+<view  style="margin-top:20rpx;">上映时间：{{list.releaseTime}}  </view>
+<view  style="margin-top:20rpx;"   >  上映地区：{{list.releaseArea}}</view>
+
+
+
+
+</view>
+  </van-col>
+</van-row>
+<van-row>
+<van-col>
+<view style="margin-left:50rpx">
+     <view style="margin-top:20rpx;">
+          导演： <span style="display:inline-block;margin-right:20rpx;" wx:for="{{director}}" wx:key="id">{{item.name}}</span>
+     </view>
+     
+<view style="margin-top:20rpx;">编剧：<span style="display:inline-block;margin-right:20rpx;" wx:for="{{scenarists}}" wx:key="id">{{item.name}}</span></view>
+<view style="margin-top:20rpx;">  电影制式：{{list.technology}}  <span style="color:rgb(220,223,230);">|</span>  电影类型：{{list.type}}</view>
+<view style="margin-top:20rpx;">电影时长：{{list.duration}}  <span style="color:rgb(220,223,230);">|</span>   电影票房：{{list.boxoffice}}（万元）</view>
+<view style="margin-top:20rpx;"style="margin-top:20rpx;">
+主演：  <span style="display:inline-block;margin-right:20rpx;" wx:for="{{actors}}" wx:key="id">{{item.name}}</span></view>
+
+
+
+
+
+
+</view>
+</van-col>
+</van-row>
+ 

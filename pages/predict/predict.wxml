@@ -14,10 +14,10 @@
   <view class="divLine"></view>
  
    <van-row style="margin:5rpx">
-     <van-col span="16"  class="movie"  > <span style="border:1rpx solid red;padding:30rpx;border-radius: 50rpx  ">电影序列</span>
+     <van-col span="16"  class="movie"  > <span style=" padding:30rpx;border-radius: 50rpx  ">电影序列</span>
      </van-col>
     
-     <van-col span="8" class="boxoffice"><span style="border:1rpx solid rebeccapurple;padding:30rpx;border-radius: 50rpx  ">预测票房</span>
+     <van-col span="8" class="boxoffice"><span style=" padding:30rpx;border-radius: 50rpx  ">预测票房</span>
      </van-col>
     </van-row>
     <view class="card" wx:for="{{list}}" wx:key="id"  >
@@ -37,8 +37,8 @@
    
    </van-col>
   <van-col span="8">  
-    <van-circle  value="{{ item.expectedBoxoffice/max*100 }}"  layer-color="#eeeeee"
-  color="#ee0a24"  text="{{item.expectedBoxoffice}} 万"  ></van-circle></van-col>
+   <view style="text-align:center;position:relative;top:100rpx;">  {{item.expectedBoxoffice}} 万 </view>
+       </van-col>
    
 </van-row>
   
