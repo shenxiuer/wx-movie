@@ -1,1 +1,23 @@
 /* pages/predicted/detailedInformation/detailPerson/detailPerson.wxss */
+.flex {
+     display: flex;
+     flex-direction: row;
+     background: lightgray
+   }
+  .sum{
+    height: 400rpx;
+    overflow-y:scroll;
+  }
+.flex-center {
+     display: flex;
+     height: 100rpx;
+     overflow-y:scroll;
+     flex-direction: row;
+   }
+   
+   .flex-item {
+     width: 160rpx;
+   }
+   .first{
+     background: rgb(250,250,250);
+   }

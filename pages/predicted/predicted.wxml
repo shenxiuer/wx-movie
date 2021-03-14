@@ -65,7 +65,7 @@
   >
 
   <view slot="price-top" >
-  <navigator  url="./detailedInformation/detailPerson/detailPerson?directorId={{item.director.id}}" hover-class="navigator-hover">
+  <navigator  url="./detailedInformation/detailPerson/detailPerson?directorId={{item.director.id}}&director=1" hover-class="navigator-hover">
     <van-button custom-style="width:10rpx;" plain type="primary" size="mini">详细信息</van-button></navigator>
    
    
@@ -92,12 +92,19 @@
   num=""
   currency=""
   price="{{item.actor.name}}"
-  desc="{{item.actor.birthday}}"
-  title="{{item.actor.location}}  "
+ 
+  desc="{{item.actor.occupation}} "
+  title="代表作：{{item.amovies[0].title}} {{item.amovies[1].title}} {{item.amovies[2].title}} {{item.amovies[3].title}} {{item.amovies[4].title}}"
   thumb="{{item.actor.imageName}} "
   
- />  
-
+ >  
+ <view slot="price-top" >
+  <navigator  url="./detailedInformation/detailPerson/detailPerson?directorId={{item.actor.id}}&actor=10" hover-class="navigator-hover">
+    <van-button custom-style="width:10rpx;" plain type="primary" size="mini">详细信息</van-button></navigator>
+   
+   
+ </view>
+ </van-card>
   
 </view>
   </van-tab>
@@ -116,15 +123,21 @@
     
     <view class="card" wx:for="{{list}}" wx:key="id">
   <van-card
-  tag="{{item.scenarist.location}}"
+  num=""
+  currency=""
   price="{{item.scenarist.name}}"
   desc="{{item.scenarist.occupation}} "
   title="代表作：{{item.amovies[0].title}} {{item.amovies[1].title}} {{item.amovies[2].title}} {{item.amovies[3].title}} {{item.amovies[4].title}}"
   thumb="{{item.scenarist.imageName}} "
   
- />  
-
-  
+ >  
+ <view slot="price-top" >
+  <navigator  url="./detailedInformation/detailPerson/detailPerson?directorId={{item.scenarist.id}}&scenarist=1" hover-class="navigator-hover">
+    <van-button custom-style="width:10rpx;" plain type="primary" size="mini">详细信息</van-button></navigator>
+   
+   
+ </view>
+  </van-card>
 </view>
   </van-tab>
 </van-tabs>

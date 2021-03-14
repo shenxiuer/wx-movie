@@ -16,7 +16,7 @@
  
   <van-col span="16">
   <view style="margin:30rpx" >
-  <view style="margin-top:20rpx;">姓名：{{list.title}}
+  <view style="margin-top:20rpx;">姓名：{{list.name}}
      <span style="color:rgb(220,223,230);">|</span>  性别：{{list.gender}}
   </view>
 
@@ -39,13 +39,33 @@
 </van-row>
 <van-row>
 <van-col>
+
+     <!-- 参演作品 -->
 <view style="margin-left:50rpx">
      <view style="margin-top:20rpx;">
           参演作品：<van-switch  size="24px"  checked="{{ checked }}" bind:change="onChange" ></van-switch> 
           展开
           <span style="display:inline-block;margin-right:20rpx;" wx:for="{{director}}" wx:key="id">{{item.name}}</span>
+
+     <view wx:if="{{show}}" class='flex '>
+    <view class='flex-item' style="width:220rpx">电影名</view>
+    <view class='flex-item' style="width:180rpx" >票房(万元)</view>
+    <view class='flex-item' style="width:200rpx">上映日期</view> 
+     <view class='flex-item'  >操作</view>
+      
+</view>
+<view class="sum" wx:if="{{show}}">
+<view class="flex-center {{index%2==1?'first':''}}"   wx:for="{{amovies}}" wx:key="id">
+    <view class='flex-item'  style="width:220rpx" >{{item.title}}</view>
+    <view class='flex-item' style="width:180rpx" >{{item.boxoffice}}</view>
+    <view class='flex-item'  style="width:200rpx">{{item.releaseTime}}</view> 
+     <view class='flex-item' >详情</view>
+      
+</view>
+</view>
+        
+          
      </view>
- >
 
 
 
@@ -53,6 +73,79 @@
 
 
 </view>
+<!-- 参演作品 -->
+
+
+   <!-- 所导作品 -->
+   <view style="margin-left:50rpx">
+     <view style="margin-top:20rpx;">
+          所导作品：<van-switch  size="24px"  checked="{{ director }}" bind:change="onChange1" ></van-switch> 
+          展开
+          <span style="display:inline-block;margin-right:20rpx;" wx:for="{{director}}" wx:key="id">{{item.name}}</span>
+
+     <view wx:if="{{show1}}" class='flex '>
+    <view class='flex-item' style="width:220rpx">电影名</view>
+    <view class='flex-item' style="width:180rpx" >票房(万元)</view>
+    <view class='flex-item' style="width:200rpx">上映日期</view> 
+     <view class='flex-item'  >操作</view>
+      
+</view>
+<view class="sum" wx:if="{{show1}}">
+<view class="flex-center {{index%2==1?'first':''}}"   wx:for="{{dmovies}}" wx:key="id">
+    <view class='flex-item'  style="width:220rpx" >{{item.title}}</view>
+    <view class='flex-item' style="width:180rpx" >{{item.boxoffice}}</view>
+    <view class='flex-item'  style="width:200rpx">{{item.releaseTime}}</view> 
+     <view class='flex-item' >详情</view>
+      
+</view>
+</view>
+        
+          
+     </view>
+
+
+
+
+
+
+</view>
+<!-- 所导作品 -->
+
+
+   <!-- 所编作品 -->
+   <view style="margin-left:50rpx">
+     <view style="margin-top:20rpx;">
+          所编作品：<van-switch  size="24px"  checked="{{ scriptwriter }}" bind:change="onChange2" ></van-switch> 
+          展开
+          <span style="display:inline-block;margin-right:20rpx;" wx:for="{{director}}" wx:key="id">{{item.name}}</span>
+
+     <view wx:if="{{show2}}" class='flex '>
+    <view class='flex-item' style="width:220rpx">电影名</view>
+    <view class='flex-item' style="width:180rpx" >票房(万元)</view>
+    <view class='flex-item' style="width:200rpx">上映日期</view> 
+     <view class='flex-item'  >操作</view>
+      
+</view>
+<view class="sum" wx:if="{{show2}}">
+<view class="flex-center {{index%2==1?'first':''}}"   wx:for="{{smovies}}" wx:key="id">
+    <view class='flex-item'  style="width:220rpx" >{{item.title}}</view>
+    <view class='flex-item' style="width:180rpx" >{{item.boxoffice}}</view>
+    <view class='flex-item'  style="width:200rpx">{{item.releaseTime}}</view> 
+     <view class='flex-item' >详情</view>
+      
+</view>
+</view>
+        
+          
+     </view>
+
+
+
+
+
+
+</view>
+<!-- 所编作品 -->
 </van-col>
 </van-row>
  
