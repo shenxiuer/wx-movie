@@ -1,1 +1,2 @@
-@import '../common/index.wxss';.van-row:after{display:table;clear:both;content:""}
+@import '../common/index.wxss';.van-row:after{display:table;clear:both;content:"";}
+ 

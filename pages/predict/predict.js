@@ -9,7 +9,7 @@ Page({
    */
   data: {
     activeKey: 0,
-    type:0,
+    type:11,
     list:[],
     flag:false,
     page:1,
@@ -18,8 +18,8 @@ Page({
     releaseTime:true,
     prePage:0,
     boxoffice:true,
-    type:'movies',
-    string:"?page=",
+   
+    string:"?date1=2021-02-11&date2=2021-02-18",
     title:'电影',
     gradientColor: {
       '0%': '#ff6666',
@@ -36,7 +36,7 @@ Page({
     });
   },
   radioChange(e) {
-    console.log(e)
+    
     console.log('radio发生change事件，携带value值为：', e.detail.value)
     
     this.setData({
@@ -70,7 +70,7 @@ Page({
    
   onClick(e) {
     if(e)
-    console.log("e"+e.currentTarget.dataset.cid)
+    console.log("e1111"+e.currentTarget.dataset.cid)
 
     var that = this
    
@@ -143,12 +143,12 @@ Page({
       },
       
       success: function (res) {
-        console.log("successful！")
-        console.log(res.data.records)
-        console.log(that.data.page)
-        console.log("string"+that.data.string)
+    
          var lis = res.data.records;
-     
+         for(var i in lis)
+         {
+             lis[i].imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].imageName;
+         }
           that.setData({
             list:lis,
             page:that.data.page,
@@ -162,7 +162,100 @@ Page({
     
    
   },
+  onMovieClick(e) {
+    if(e)
+    console.log("e"+e.currentTarget.dataset.cid)
+
+    var that = this
+   
+    // console.log(this.data.page)
+    // console.log(parseInt(e.currentTarget.dataset.cid))
+    // var temp = parseInt(e.currentTarget.dataset.cid)
+    if(e)
+    {
+     
+      // if((parseInt(e.currentTarget.dataset.cid)==-1)||parseInt(e.currentTarget.dataset.cid==1))
+      // {
+        // if(this.data.page+parseInt(e.currentTarget.dataset.cid)!=0)
+        // {
+          if(e.currentTarget.dataset.cid)
+          {
+            if((parseInt(e.currentTarget.dataset.cid))+this.data.page!=0) 
+            this.setData({
+            page: this.data.page+parseInt(e.currentTarget.dataset.cid)
+            })
+          }
+        
+          else
+          {
+            this.setData({
+              page: 1
+          })
+          }
+        // }
+     
+      
+      }
+      else
+      {
+        this.setData({
+          page: 1
+      })
+    }
+    
+   
+   
+   
  
+    if(this.data.type==11)
+    {
+     
+     this.setData({
+ 
+      string:"?date1=2021-02-11&date2=2021-02-18"
+     })
+       
+    }
+    else if(this.data.type == 22)
+    {
+
+      this.setData({
+           
+        string:"?date1=2021-02-11&date2=2021-02-18"
+        
+       })
+      
+    }
+ 
+ 
+    wx.request({
+     
+      url: app.globalData.commonUrl+'movieSchedulePage'+that.data.string+'&page='+that.data.page,
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      
+      success: function (res) {
+       
+         var lis = res.data.records;
+         for(var i in lis)
+         {
+             lis[i].imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].imageName;
+         }
+          that.setData({
+            list:lis,
+            page:that.data.page,
+            flag:true
+          })
+       
+        
+         
+      } 
+    })
+    
+   
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -178,7 +271,7 @@ Page({
    */
   onShow: function () {
     
-    this.onClick()
+    this.onMovieClick()
    
   },
 

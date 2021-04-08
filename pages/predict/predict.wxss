@@ -19,7 +19,11 @@
 /* 横着的分割View样式 */
 /*分割线样式*/
 .divLine{
-     background: #E0E3DA;
+     background: #73a115;
      width: 100%;
      height: 5rpx;
     }
+.middle{
+     background-color:#fbfdf8;
+}
+ 

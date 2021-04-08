@@ -1,56 +1,80 @@
 <!--pages/predicted/predicted.wxml-->
- 
-  
- 
- 
 
-   <radio-group bindchange="radioChange">
-     <radio class="head" value="1"  bind:tap="onClick"          >按预测票房排序</radio>  <radio class="head" value="2"   bind:tap="onClick"     >按时间排序</radio>  
-     <radio class="head" value="3">按热度 <span style="font-size:20rpx;color:red;">(未开发)</span></radio>
-   </radio-group>
 
- 
-     <!-- 分割线 -->
-  <view class="divLine"></view>
- 
-   <van-row style="margin:5rpx">
-     <van-col span="16"  class="movie"  > <span style=" padding:30rpx;border-radius: 50rpx  ">电影序列</span>
-     </van-col>
-    
-     <van-col span="8" class="boxoffice"><span style=" padding:30rpx;border-radius: 50rpx  ">预测票房</span>
-     </van-col>
-    </van-row>
-    <view class="card" wx:for="{{list}}" wx:key="id"  >
-    
-      <van-row>
-  <van-col span="16">
-    
-    <van-card  num-class="display:none"
+<radio-group bindchange="radioChange">
+  <radio class="head" value="1" bind:tap="onClick">按预测票房排序</radio>
+  <radio class="head" value="2" bind:tap="onClick">按时间排序</radio>
+  <radio class="head" value="3">按热度 <span style="font-size:20rpx;color:red;">(未开发)</span></radio>
    
-   currency=""
-   tag="{{item.releaseTime}}"
-   price="{{item.title}}"
-   desc="{{item.type}}"
-   title="{{item.actors[0].name}} {{item.actors[1].name}} {{item.actors[2].name}}"
-   thumb="https://img2020.cnblogs.com/blog/1648896/202101/1648896-20210111190624889-1300685743.png"
-   />
-   
-   </van-col>
-  <van-col span="8">  
-   <view style="text-align:center;position:relative;top:100rpx;">  {{item.expectedBoxoffice}} 万 </view>
-       </van-col>
-   
+  <radio class="head" value="11" bind:tap="onMovieClick" checked="true">春节档</radio>
+  <radio class="head" value="22" bind:tap="onMovieClick">国庆档</radio>
+  <radio class="head" value="33" bind:tap="onMovieClick">中秋档</radio>
+  <radio class="head" value="44" bind:tap="onMovieClick">六一档</radio>
+</radio-group>
+
+<view style="width:50rpx;height:50rpx;  background-color:#fbfdf8;"></view>
+<!-- 分割线 -->
+<view class="divLine"></view>
+<view style="background: aliceblue">
+<van-row   class="middle " style="margin:5rpx; background:rgb(50,20,250); ">
+  <van-col span="14" class="movie"> 
+    <view style="width: 426rpx; height: 54rpx; display: block; box-sizing: border-box">
+    <span style=" padding:30rpx;border-radius: 50rpx ;font-size:35rpx; ">电影序列</span>
+  </view>
+  </van-col>
+
+  <van-col span="5" class="boxoffice"><span style="  font-size:25rpx; ">预测票房(万)</span>
+  </van-col>
+  <van-col span="5" class="boxoffice"><span
+      style="  font-size:25rpx; ">真实票房(万)</span>
+  </van-col>
 </van-row>
-  
- 
-    
+</view>
+<view class="card" wx:for="{{list}}" wx:key="id">
 
+  <van-row>
+    <view >
+    <van-col span="14">
+
+      <van-card num-class="display:none" currency="" tag="{{item.releaseTime}}" price="{{item.title}}"
+        desc="{{item.type}}" title="{{item.actors[0].name}} {{item.actors[1].name}} {{item.actors[2].name}}"
+        thumb="{{item.imageName}}">
+        <view slot="bottom">
+          <!-- <view style="color:red;">准确率：99.25%</view> -->
+        </view>
+      </van-card>
+
+
+    </van-col>
+
+    <van-col span="5">
+      <view style="text-align: center; position: relative; top: 2rpx; font-size: small; left: 0rpx; width: 156rpx; height: 212rpx; display: block; box-sizing: border-box; padding-top: 70rpx; background: lightcyan"> {{item.expectedBoxoffice}} </view>
+    </van-col>
+    <van-col span="5">
+      <view style="text-align: center; position: relative; top: 4rpx; font-size: small; left: -6rpx; width: 146rpx; height: 206rpx; display: block; box-sizing: border-box; padding-top: 70rpx; background: lightyellow"> {{item.boxoffice}} </view>
+
+    </van-col>
+    <view style="position: relative; color: orange; margin-bottom: 10rpx; left: 544rpx; top: -85rpx; font-size: small; width: 182rpx; height: 170rpx; display: block; box-sizing: border-box">准确率：99.25%</view>
+  </view>
   
+  </van-row>
+  <view style="background-color:#1989fa;">
+  <van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
+>
+   
+</van-divider>
+
 </view>
 
- 
- 
- 
+
+
+</view>
+
+
+
+
 
 
 
@@ -59,18 +83,15 @@
 </view>
 <view wx:if="{{flag}}" style="margin:15rpx">
   <van-row>
-    
-  <van-col offset="2" span="24">
-    <van-button   plain type="info" size="mini" custom-style="width:150rpx;margin-right:65rpx;">
+
+    <van-col offset="2" span="24">
+      <van-button plain type="info" size="mini" custom-style="width:150rpx;margin-right:65rpx;">
         第{{page}}页</van-button>
-    <van-button  data-cid='-1'  bind:click="onClick" plain type="info" size="mini" custom-style="width:150rpx;margin-right:65rpx;">上一页</van-button>
-  <van-button plain data-cid='1'  bind:click="onClick" type="info" size="mini" custom-style="width:150rpx">下一页</van-button>
-</van-col>
-</van-row>
- 
+      <van-button data-cid='-1' bind:click="{{type > 10?'onMovieClick':'onClick'}}" plain type="info" size="mini"
+        custom-style="width:150rpx;margin-right:65rpx;">上一页 </van-button>
+      <van-button plain data-cid='1' bind:click="{{ type  >10?'onMovieClick':'onClick'}}" type="info" size="mini" custom-style="width:150rpx">下一页
+      </van-button>
+    </van-col>
+  </van-row>
+
 </view>
-  
-   
-
-
- 

@@ -133,7 +133,7 @@ Page({
         else if(that.data.name=="directors")
         {
           console.log("successful！directors")
-         
+         console.log(res)
           var lis = res.data.directors;
           for(var i in lis)
           {

@@ -48,7 +48,7 @@ App({
     // backUrl:'http://81.70.149.182:8086/search/',
     // backUrl:'http://39.107.61.165:10020/search/?'
     commonUrl:'https://www.greatideas.cn:10020/',
-    // commonUrl:'http://localhost:8008',
+    // commonUrl:'http://localhost:8008/',
     // 2021年1月11日哈哈
     predictUrl:'https://www.greatideas.cn:10020/moviePredictionPage',
     // predictUrl:'http://localhost:8008/moviePredictionPage'

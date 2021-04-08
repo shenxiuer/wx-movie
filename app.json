@@ -1,8 +1,9 @@
 {
      "pages": [
+          "pages/predict/predict",
           "pages/predicted/predicted",
           "pages/predicted/detailedInformation/detailPerson/detailPerson",
-          "pages/predict/predict",
+         
           "pages/predicted/detailedInformation/detail",
           "pages/analyze/analyze",
           "pages/predictCompare/predictCompare",

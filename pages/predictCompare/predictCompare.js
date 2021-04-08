@@ -102,8 +102,6 @@ Page({
           })
           }
         // }
-     
-      
       }
       else
       {
@@ -111,11 +109,7 @@ Page({
           page: 1
       })
     }
-    
-   
-   
-   
- 
+
     if(this.data.type==1)
     {
      
