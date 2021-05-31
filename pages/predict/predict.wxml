@@ -4,7 +4,7 @@
 <radio-group bindchange="radioChange">
   <radio class="head" value="1" bind:tap="onClick">按预测票房排序</radio>
   <radio class="head" value="2" bind:tap="onClick">按时间排序</radio>
-  <radio class="head" value="3">按热度 <span style="font-size:20rpx;color:red;">(未开发)</span></radio>
+  <radio class="head" value="3">按热度 <span style="font-size:20rpx;color:red;"></span></radio>
    
   <radio class="head" value="11" bind:tap="onMovieClick" checked="true">春节档</radio>
   <radio class="head" value="22" bind:tap="onMovieClick">国庆档</radio>
@@ -54,7 +54,7 @@
       <view style="text-align: center; position: relative; top: 4rpx; font-size: small; left: -6rpx; width: 146rpx; height: 206rpx; display: block; box-sizing: border-box; padding-top: 70rpx; background: lightyellow"> {{item.boxoffice}} </view>
 
     </van-col>
-    <view style="position: relative; color: orange; margin-bottom: 10rpx; left: 544rpx; top: -85rpx; font-size: small; width: 182rpx; height: 170rpx; display: block; box-sizing: border-box">准确率：99.25%</view>
+    <view style="position: relative; color: orange; margin-bottom: 10rpx; left: 544rpx; top: -85rpx; font-size: small; width: 182rpx; height: 170rpx; display: block; box-sizing: border-box">准确率：{{item.key}}%</view>
   </view>
   
   </van-row>

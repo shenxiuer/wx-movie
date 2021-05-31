@@ -151,8 +151,8 @@ Page({
               // lis[i]['key'] = ( Math.min(lis[i].expectedBoxoffice,lis[i].boxoffice)/Math.max(lis[i].expectedBoxoffice,lis[i].boxoffice)*100).toFixed(2)+
               lis[i].boxoffice = lis[i].boxoffice==null?0:lis[i].boxoffice
     
-              lis[i].accuracy=  100*lis[i].accuracy 
-              lis[i].accuracy=  lis[i].accuracy.toFixed(2)
+              lis[i].accuracy =  100*lis[i].accuracy 
+              lis[i].accuracy =  lis[i].accuracy.toFixed(2)
   
           }
           // lis.sort(function(a,b){

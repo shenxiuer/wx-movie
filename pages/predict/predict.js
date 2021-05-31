@@ -18,7 +18,7 @@ Page({
     releaseTime:true,
     prePage:0,
     boxoffice:true,
-   
+    spring:[],
     string:"?date1=2021-02-11&date2=2021-02-18",
     title:'电影',
     gradientColor: {
@@ -143,11 +143,19 @@ Page({
       },
       
       success: function (res) {
-    
+         console.log(res)
          var lis = res.data.records;
          for(var i in lis)
          {
              lis[i].imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].imageName;
+             if(lis[i].boxoffice == null)
+             lis[i].boxoffice = 0.00
+             var k = ( Math.min(lis[i].expectedBoxoffice,lis[i].boxoffice)/Math.max(lis[i].expectedBoxoffice,lis[i].boxoffice)*100).toFixed(2)
+             console.log(k)
+             if(k==0.00)
+             lis[i]['key'] = 100.00
+             else 
+             lis[i]['key'] = k
          }
           that.setData({
             list:lis,
@@ -221,7 +229,25 @@ Page({
 
       this.setData({
            
-        string:"?date1=2021-02-11&date2=2021-02-18"
+        string:"?date1=2019-09-30&date2=2019-10-08"
+        
+       })
+      
+    }  else if(this.data.type == 33)
+    {
+
+      this.setData({
+           
+        string:"?date1=2019-09-14&date2=2019-09-28"
+        
+       })
+      
+    }  else if(this.data.type == 44)
+    {
+
+      this.setData({
+           
+        string:"?date1=2019-05-31&date2=2019-06-10"
         
        })
       
@@ -237,12 +263,21 @@ Page({
       },
       
       success: function (res) {
-       
+         console.log(res)
+      
          var lis = res.data.records;
+      
          for(var i in lis)
          {
              lis[i].imageName="http://106.54.68.249:10025/movie_picture/"+lis[i].imageName;
+             var k = ( Math.min(lis[i].expectedBoxoffice,lis[i].boxoffice)/Math.max(lis[i].expectedBoxoffice,lis[i].boxoffice)*100).toFixed(2)
+             console.log(k)
+             if(k==0.00)
+             lis[i]['key'] = 100.00
+             else 
+             lis[i]['key'] = k
          }
+          
           that.setData({
             list:lis,
             page:that.data.page,

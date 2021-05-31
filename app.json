@@ -1,5 +1,22 @@
-{
+{    "usingComponents": {
+     "van-card": "@vant/weapp/card/index",
+     "van-search": "@vant/weapp/search/index",
+     "van-row": "@vant/weapp/row/index",
+     "van-col": "@vant/weapp/col/index",
+     "van-divider": "@vant/weapp/divider/index",
+     "van-sidebar": "@vant/weapp/sidebar/index",
+     "van-sidebar-item":"@vant/weapp/sidebar-item/index",
+     "van-tab": "@vant/weapp/tab/index",
+     "van-tabs": "@vant/weapp/tabs/index",
+     "van-circle": "@vant/weapp/circle/index",
+     "van-radio": "@vant/weapp/radio/index",
+     "van-radio-group": "@vant/weapp/radio-group/index",
+     "van-button": "@vant/weapp/button/index",
+     "van-field": "@vant/weapp/field/index"
+},
+
      "pages": [
+          "pages/index/index",
           "pages/predict/predict",
           "pages/predicted/predicted",
           "pages/predicted/detailedInformation/detailPerson/detailPerson",
@@ -14,7 +31,6 @@
           "pages/analyze/officeTrend/officeTrend",
           "pages/homepage/homepage",
           "pages/my/my",
-          "pages/index/index",
           "pages/logs/logs"
      ],
      "tabBar": {
@@ -37,12 +53,7 @@
                     "iconPath": "/pages/images/搜索.png",
                     "selectedIconPath": "/pages/images/搜索(1).png"
                },
-               {
-                    "pagePath": "pages/predictCompare/predictCompare",
-                    "text": "预测比较",
-                    "iconPath": "/pages/images/搜索.png",
-                    "selectedIconPath": "/pages/images/搜索(1).png"
-               },
+              
                {
                     "pagePath": "pages/index/index",
                     "text": "我的",
@@ -51,9 +62,7 @@
                }
           ]
      },
-     "usingComponents": {
-          "van-button": "@vant/weapp/button/index"
-     },
+  
      "window": {
           "backgroundTextStyle": "light",
           "navigationBarBackgroundColor": "#fff",
